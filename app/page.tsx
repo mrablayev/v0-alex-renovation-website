@@ -7,7 +7,6 @@ import Link from "next/link"
 import {
   Phone,
   Mail,
-  MapPin,
   Star,
   CheckCircle,
   Hammer,
@@ -20,11 +19,8 @@ import {
   Shield,
   Award,
 } from "lucide-react"
-import { getRecentProjects } from "@/lib/projects-data"
 
 export default function HomePage() {
-  const recentProjects = getRecentProjects(3)
-
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -50,9 +46,6 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
                   <Link href="/contact">Get Free Estimate</Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild className="text-lg px-8 py-6 bg-transparent">
-                  <Link href="/projects">View Our Work</Link>
                 </Button>
               </div>
 
@@ -261,68 +254,6 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Recent Projects Preview */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-serif font-bold text-balance">Recent Project Highlights</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-              See the quality and craftsmanship that sets Alex Renovation apart from the competition.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {recentProjects.map((project, index) => (
-              <Card key={index} className="group overflow-hidden border-0 shadow-md hover:shadow-xl transition-all">
-                <div className="aspect-[4/3] overflow-hidden relative">
-                  <img
-                    src={`/abstract-geometric-shapes.png?key=rdsk1&height=400&width=600&query=${project.afterImage}`}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <Badge variant="secondary" className="bg-white/90 text-primary">
-                      {project.category}
-                    </Badge>
-                  </div>
-                  <div className="absolute bottom-4 right-4">
-                    <Badge className="bg-green-600">{project.year}</Badge>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-serif font-semibold">{project.title}</h3>
-                    <p className="text-muted-foreground flex items-center">
-                      <MapPin className="h-4 w-4 mr-1" />
-                      {project.location}
-                    </p>
-                    <p className="text-sm text-muted-foreground line-clamp-2">{project.description}</p>
-                    <div className="flex items-center justify-between pt-2">
-                      <div className="text-sm font-medium text-primary">{project.budget}</div>
-                      <div className="text-sm text-muted-foreground">{project.duration}</div>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      {[...Array(project.testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-3 w-3 fill-yellow-400 text-yellow-400" />
-                      ))}
-                      <span className="text-xs text-muted-foreground ml-2">
-                        "{project.testimonial.text.slice(0, 50)}..."
-                      </span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Button size="lg" asChild>
-              <Link href="/projects">View All Projects</Link>
-            </Button>
           </div>
         </div>
       </section>

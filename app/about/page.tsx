@@ -44,26 +44,13 @@ export default function AboutPage() {
               <div className="space-y-4">
                 <h2 className="text-3xl lg:text-4xl font-serif font-bold text-balance">Our Story</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Founded in 2014 by Oleksandr Ablaiev, Alex Renovation began as a small handyman service with a simple
-                  mission: to help Rochester homeowners create the spaces they love. What started as one man with a
-                  toolbox has grown into a full-service renovation company trusted by hundreds of families.
+                  At Alex Renovation, we believe every home has the potential to be extraordinary. Our passion for
+                  craftsmanship and commitment to excellence has made us Rochester's trusted renovation partner.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Oleksandr's background in construction engineering and his passion for craftsmanship laid the
-                  foundation for our company's commitment to quality. Today, our team of skilled professionals continues
-                  to uphold the same values that started it all: integrity, quality, and customer satisfaction.
+                  We specialize in transforming homes with quality workmanship and attention to detail. Our commitment
+                  to customer satisfaction drives everything we do, from initial consultation to project completion.
                 </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center p-6 bg-muted/50 rounded-lg">
-                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                  <div className="text-sm text-muted-foreground">Projects Completed</div>
-                </div>
-                <div className="text-center p-6 bg-muted/50 rounded-lg">
-                  <div className="text-3xl font-bold text-primary mb-2">10+</div>
-                  <div className="text-sm text-muted-foreground">Years Experience</div>
-                </div>
               </div>
             </div>
 
@@ -71,15 +58,9 @@ export default function AboutPage() {
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src="/alex-martinez-founder-of-alex-renovation-in-his-workshop.jpg"
-                  alt="Oleksandr Ablaiev, founder of Alex Renovation"
+                  alt="Professional renovation workspace"
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg border">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">Oleksandr Ablaiev</div>
-                  <div className="text-sm text-muted-foreground">Founder & Lead Contractor</div>
-                </div>
               </div>
             </div>
           </div>
@@ -143,71 +124,6 @@ export default function AboutPage() {
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-base leading-relaxed">{value.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl lg:text-4xl font-serif font-bold text-balance">Meet Our Expert Team</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-              Our skilled professionals bring decades of combined experience to every project.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Oleksandr Ablaiev",
-                role: "Founder & Lead Contractor",
-                experience: "15+ Years",
-                specialties: ["Project Management", "Custom Carpentry", "Kitchen Remodels"],
-                image: "professional contractor headshot",
-              },
-              {
-                name: "Maria Rodriguez",
-                role: "Interior Design Consultant",
-                experience: "8+ Years",
-                specialties: ["Space Planning", "Color Coordination", "Material Selection"],
-                image: "interior designer headshot",
-              },
-              {
-                name: "James Thompson",
-                role: "Master Electrician",
-                experience: "12+ Years",
-                specialties: ["Electrical Systems", "Smart Home Integration", "Code Compliance"],
-                image: "electrician headshot",
-              },
-            ].map((member, index) => (
-              <Card key={index} className="text-center border-0 bg-card/50">
-                <CardHeader className="pb-4">
-                  <div className="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4">
-                    <img
-                      src={`/abstract-geometric-shapes.png?height=128&width=128&query=${member.image}`}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <CardTitle className="text-xl font-serif">{member.name}</CardTitle>
-                  <CardDescription className="text-primary font-medium">{member.role}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="text-sm text-muted-foreground">{member.experience} Experience</div>
-                  <div className="space-y-2">
-                    <div className="text-sm font-medium">Specialties:</div>
-                    <div className="flex flex-wrap gap-2 justify-center">
-                      {member.specialties.map((specialty, i) => (
-                        <Badge key={i} variant="secondary" className="text-xs">
-                          {specialty}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
                 </CardContent>
               </Card>
             ))}
