@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -23,6 +24,13 @@ export default function ProjectsPage() {
     <div className="min-h-screen">
       <Navigation />
 
+      {/* Breadcrumbs */}
+      <section className="py-4 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <Breadcrumbs />
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/5 to-accent/5 py-20">
         <div className="container mx-auto px-4">
@@ -35,7 +43,7 @@ export default function ProjectsPage() {
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-3xl mx-auto">
               Explore our portfolio of successful home renovations throughout Rochester, NY. From kitchen remodels to
-              complete home transformations, see the quality craftsmanship that sets us apart.
+              complete home transformations, see the quality craftsmanship that sets us apart. Each project showcases our expertise in <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovations</Link>, <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom remodeling</Link>, and other <Link href="/services" className="text-primary hover:underline">professional renovation services</Link>.
             </p>
           </div>
         </div>

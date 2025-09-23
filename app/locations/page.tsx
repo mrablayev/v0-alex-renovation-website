@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -19,6 +20,13 @@ export default function LocationsPage() {
     <div className="min-h-screen">
       <Navigation />
 
+      {/* Breadcrumbs */}
+      <section className="py-4 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <Breadcrumbs />
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/5 to-accent/5 py-20">
         <div className="container mx-auto px-4">
@@ -31,7 +39,7 @@ export default function LocationsPage() {
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-3xl mx-auto">
               Professional renovation services throughout Monroe County and the greater Rochester area. Local expertise,
-              quality craftsmanship, and personalized service for every community we serve.
+              quality craftsmanship, and personalized service for every community we serve. We offer comprehensive <Link href="/services" className="text-primary hover:underline">renovation services</Link> including <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen remodeling</Link> and <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom renovations</Link> in all our service areas.
             </p>
           </div>
         </div>

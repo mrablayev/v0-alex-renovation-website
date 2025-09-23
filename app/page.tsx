@@ -39,7 +39,7 @@ export default function HomePage() {
                 </h1>
                 <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
                   From small repairs to complete home transformations, we handle every aspect of your renovation project
-                  with expertise and care.
+                  with expertise and care. Whether you need <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovation services</Link>, <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom remodeling</Link>, or <Link href="/services/flooring" className="text-primary hover:underline">flooring installation</Link>, we're here to help transform your home.
                 </p>
               </div>
 
@@ -100,7 +100,7 @@ export default function HomePage() {
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
               From small repairs to complete home transformations, we handle every aspect of your renovation project
-              with expertise and care.
+              with expertise and care. Explore our <Link href="/services" className="text-primary hover:underline">complete renovation services</Link> or <Link href="/projects" className="text-primary hover:underline">view our completed projects</Link> to see the quality of our work.
             </p>
           </div>
 
@@ -283,6 +283,7 @@ export default function HomePage() {
               <CardContent>
                 <CardDescription className="text-sm leading-relaxed">
                   Complete kitchen renovation with custom cabinetry and quartz countertops in Brighton, NY.
+                  <Link href="/locations/brighton-ny" className="text-primary hover:underline ml-1">Learn about our Brighton services</Link>.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -301,6 +302,7 @@ export default function HomePage() {
               <CardContent>
                 <CardDescription className="text-sm leading-relaxed">
                   Spa-like bathroom renovation with walk-in shower and heated floors in Pittsford, NY.
+                  <Link href="/locations/pittsford-ny" className="text-primary hover:underline ml-1">Discover our Pittsford services</Link>.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -319,6 +321,7 @@ export default function HomePage() {
               <CardContent>
                 <CardDescription className="text-sm leading-relaxed">
                   Beautiful oak hardwood flooring installation throughout main living areas in Webster, NY.
+                  <Link href="/locations/webster-ny" className="text-primary hover:underline ml-1">Explore our Webster services</Link>.
                 </CardDescription>
               </CardContent>
             </Card>

@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -23,6 +24,13 @@ export default function BlogPage() {
     <div className="min-h-screen">
       <Navigation />
 
+      {/* Breadcrumbs */}
+      <section className="py-4 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <Breadcrumbs />
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/5 to-accent/5 py-20">
         <div className="container mx-auto px-4">
@@ -35,7 +43,7 @@ export default function BlogPage() {
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-3xl mx-auto">
               Expert tips, guides, and insights from our renovation professionals. Learn about the latest trends,
-              avoid common mistakes, and get inspired for your next home improvement project.
+              avoid common mistakes, and get inspired for your next home improvement project. Get practical advice for <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovations</Link>, <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom remodeling</Link>, and other <Link href="/services" className="text-primary hover:underline">home renovation services</Link>.
             </p>
           </div>
         </div>

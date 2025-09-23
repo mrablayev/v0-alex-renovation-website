@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { Breadcrumbs } from "@/components/breadcrumbs"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -18,6 +19,13 @@ export default function AboutPage() {
     <div className="min-h-screen">
       <Navigation />
 
+      {/* Breadcrumbs */}
+      <section className="py-4 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <Breadcrumbs />
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/5 to-accent/5 py-20">
         <div className="container mx-auto px-4">
@@ -30,7 +38,7 @@ export default function AboutPage() {
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-3xl mx-auto">
               At Alex Renovation, we believe every home has the potential to be extraordinary. Our passion for
-              craftsmanship and commitment to excellence has made us Rochester's trusted renovation partner.
+              craftsmanship and commitment to excellence has made us Rochester's trusted renovation partner. We specialize in <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovations</Link>, <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom remodeling</Link>, and comprehensive <Link href="/services" className="text-primary hover:underline">home renovation services</Link> throughout the Rochester area.
             </p>
           </div>
         </div>
@@ -49,7 +57,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   We specialize in transforming homes with quality workmanship and attention to detail. Our commitment
-                  to customer satisfaction drives everything we do, from initial consultation to project completion.
+                  to customer satisfaction drives everything we do, from initial consultation to project completion. View our <Link href="/projects" className="text-primary hover:underline">completed renovation projects</Link> to see examples of our work throughout <Link href="/locations" className="text-primary hover:underline">Rochester and surrounding areas</Link>.
                 </p>
               </div>
             </div>
