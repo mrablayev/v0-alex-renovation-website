@@ -19,12 +19,18 @@ const services = [
   { name: "Kitchen Renovations", href: "/services/kitchen-renovations" },
   { name: "Bathroom Remodels", href: "/services/bathroom-remodels" },
   { name: "Flooring", href: "/services/flooring" },
+  { name: "Handyman Services", href: "/services/handyman" },
+  { name: "Exterior Painting", href: "/services/exterior-painting" },
+  { name: "Windows & Doors", href: "/services/windows-doors" },
+  { name: "Tiling", href: "/services/tiling" },
   { name: "Drywall", href: "/services/drywall" },
+  { name: "Decks & Patios", href: "/services/decks-patios" },
+  { name: "Basement Finishing", href: "/services/basement-finishing" },
   { name: "Painting", href: "/services/painting" },
   { name: "Plumbing", href: "/services/plumbing" },
   { name: "Electrical Work", href: "/services/electrical" },
   { name: "HVAC", href: "/services/hvac" },
-  { name: "Exterior Improvements", href: "/services/exterior" },
+  { name: "Roofing", href: "/services/roofing" },
 ]
 
 export function Navigation() {

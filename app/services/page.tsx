@@ -16,6 +16,8 @@ import {
   ArrowRight,
   CheckCircle,
   Star,
+  Grid3X3,
+  TreePine,
 } from "lucide-react"
 import type { Metadata } from "next"
 
@@ -55,6 +57,33 @@ const services = [
     backgroundImage: "/laminate-flooring-installation-with-planks-and-fin.jpg",
   },
   {
+    title: "Handyman Services",
+    description: "Reliable handyman services for all your home repair and maintenance needs.",
+    icon: Wrench,
+    href: "/services/handyman",
+    features: ["Home Repairs", "Fixture Installation", "Assembly Services", "Maintenance"],
+    startingPrice: "$75/hr",
+    backgroundImage: "/handyman-installing-cabinet-hardware-and-fixtures.jpg",
+  },
+  {
+    title: "Tiling Services",
+    description: "Expert tile installation for bathrooms, kitchens, and flooring with precision and quality.",
+    icon: Grid3X3,
+    href: "/services/tiling",
+    features: ["Bathroom Tiles", "Kitchen Backsplashes", "Floor Tiling", "Custom Patterns"],
+    startingPrice: "$5,000",
+    backgroundImage: "/beautiful-bathroom-tile-installation-with-subway.jpg",
+  },
+  {
+    title: "Basement Finishing",
+    description: "Transform your basement into valuable living space with professional finishing services.",
+    icon: Home,
+    href: "/services/basement-finishing",
+    features: ["Family Rooms", "Home Theaters", "Moisture Control", "Electrical & HVAC"],
+    startingPrice: "$15,000",
+    backgroundImage: "/beautiful-finished-basement-with-entertainment-area.jpg",
+  },
+  {
     title: "Drywall & Framing",
     description: "Professional drywall installation, repair, and custom framing for room additions and renovations.",
     icon: Hammer,
@@ -62,6 +91,24 @@ const services = [
     features: ["New Construction", "Drywall Repair", "Texture Matching", "Room Additions"],
     startingPrice: "$1,200",
     backgroundImage: "/drywall-installation-and-smooth-finished-ceiling-w.jpg",
+  },
+  {
+    title: "Decks & Patios",
+    description: "Custom outdoor living spaces including deck construction and patio installation.",
+    icon: TreePine,
+    href: "/services/decks-patios",
+    features: ["Custom Decks", "Stone Patios", "Outdoor Kitchens", "Pergolas"],
+    startingPrice: "$8,000",
+    backgroundImage: "/beautiful-deck-construction-with-composite-materials.jpg",
+  },
+  {
+    title: "Windows & Doors",
+    description: "Energy-efficient window and door installation for improved comfort and security.",
+    icon: Home,
+    href: "/services/windows-doors",
+    features: ["Replacement Windows", "Entry Doors", "Patio Doors", "Energy Efficiency"],
+    startingPrice: "$400",
+    backgroundImage: "/beautiful-home-with-new-energy-efficient-windows.jpg",
   },
   {
     title: "Interior Painting",
@@ -72,6 +119,15 @@ const services = [
     features: ["Interior Painting", "Exterior Painting", "Color Consultation", "Trim & Detail Work"],
     startingPrice: "$2,500",
     backgroundImage: "/interior-painting-with-roller-and-finished-living-.jpg",
+  },
+  {
+    title: "Exterior Painting",
+    description: "Weather-resistant exterior painting that protects and beautifies your home's exterior.",
+    icon: PaintBucket,
+    href: "/services/exterior-painting",
+    features: ["House Painting", "Trim Work", "Deck Staining", "Power Washing"],
+    startingPrice: "$3,500",
+    backgroundImage: "/exterior-house-painting-with-ladder-and-paint-bru.jpg",
   },
   {
     title: "Plumbing Services",
@@ -101,13 +157,13 @@ const services = [
     backgroundImage: "/hvac-minisplit-unit-installation-and-vent-register.jpg",
   },
   {
-    title: "Exterior Improvements",
-    description: "Enhance your home's curb appeal with siding, roofing, windows, and outdoor living spaces.",
+    title: "Roofing Services",
+    description: "Professional roofing installation, repair, and maintenance with premium materials.",
     icon: Home,
-    href: "/services/exterior",
-    features: ["Siding Installation", "Window Replacement", "Deck Building", "Roofing Repair"],
+    href: "/services/roofing",
+    features: ["Roof Replacement", "Repair Services", "Gutters", "Emergency Service"],
     startingPrice: "$5,000",
-    backgroundImage: "/exterior-home-improvements-with-siding-and-entry-d.jpg",
+    backgroundImage: "/professional-roofer-installing-shingles-on-house.jpg",
   },
 ]
 
