@@ -5,15 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Phone, Mail } from "lucide-react"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+import { Menu, Phone, Mail, ChevronDown } from "lucide-react"
 
 const services = [
   { name: "Kitchen Renovations", href: "/services/kitchen-renovations" },
@@ -35,9 +27,10 @@ const services = [
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isServicesOpen, setIsServicesOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -53,77 +46,78 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                    Home
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+          <nav className="hidden lg:flex items-center space-x-8">
+            <Link 
+              href="/" 
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Home
+            </Link>
 
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-background hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary data-[state=open]:bg-primary/10 data-[state=open]:text-primary">
-                  Services
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid w-[400px] gap-2 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white border shadow-lg rounded-md">
+            {/* Services Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <button className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+                <span>Services</span>
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              
+              {isServicesOpen && (
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                  <div className="grid grid-cols-2 gap-1 p-4">
                     {services.map((service) => (
-                      <NavigationMenuLink asChild key={service.name}>
-                        <Link
-                          href={service.href}
-                          className="block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-primary hover:text-white focus:bg-primary focus:text-white text-foreground bg-transparent border border-transparent hover:border-primary"
-                        >
-                          <div className="text-sm font-medium leading-tight">{service.name}</div>
-                        </Link>
-                      </NavigationMenuLink>
+                      <Link
+                        key={service.name}
+                        href={service.href}
+                        className="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors"
+                      >
+                        {service.name}
+                      </Link>
                     ))}
                   </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                </div>
+              )}
+            </div>
 
-              <NavigationMenuItem>
-                <Link href="/projects" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                    Projects
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+            <Link 
+              href="/projects" 
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Projects
+            </Link>
 
-              <NavigationMenuItem>
-                <Link href="/blog" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                    Blog
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+            <Link 
+              href="/blog" 
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Blog
+            </Link>
 
-              <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                    About
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+            <Link 
+              href="/about" 
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              About
+            </Link>
 
-              <NavigationMenuItem>
-                <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary focus:bg-primary/10 focus:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50">
-                    Contact
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+            <Link 
+              href="/contact" 
+              className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Contact
+            </Link>
+          </nav>
 
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+            <div className="flex items-center space-x-2 text-sm text-gray-600">
               <Phone className="h-4 w-4" />
               <span>(585) 472-5795</span>
             </div>
-            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button asChild className="bg-blue-600 text-white hover:bg-blue-700">
               <Link href="/contact">Get Free Estimate</Link>
             </Button>
           </div>
@@ -148,7 +142,7 @@ export function Navigation() {
                       <Link
                         key={service.name}
                         href={service.href}
-                        className="block text-sm text-muted-foreground hover:text-foreground"
+                        className="block text-sm text-gray-600 hover:text-blue-600"
                         onClick={() => setIsOpen(false)}
                       >
                         {service.name}
@@ -177,7 +171,7 @@ export function Navigation() {
                     <Mail className="h-4 w-4" />
                     <span>info@alexrenovation.net</span>
                   </div>
-                  <Button asChild className="w-full">
+                  <Button asChild className="w-full bg-blue-600 text-white hover:bg-blue-700">
                     <Link href="/contact" onClick={() => setIsOpen(false)}>
                       Get Free Estimate
                     </Link>
