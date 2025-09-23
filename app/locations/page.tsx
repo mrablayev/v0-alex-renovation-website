@@ -180,7 +180,7 @@ export default function LocationsPage() {
               { number: "500+", label: "Local Projects Completed" },
               { number: "8", label: "Cities Served" },
               { number: "98%", label: "Customer Satisfaction" },
-              { number: "10+", label: "Years in Rochester" },
+              { number: "5+", label: "Years in Rochester" },
             ].map((stat, index) => (
               <Card key={index} className="text-center border-0 bg-card/50">
                 <CardContent className="pt-6">

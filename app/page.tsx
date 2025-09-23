@@ -249,7 +249,7 @@ export default function HomePage() {
               </div>
               <div className="absolute -top-6 -right-6 bg-white p-6 rounded-xl shadow-lg border">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary">10+</div>
+                  <div className="text-3xl font-bold text-primary">5+</div>
                   <div className="text-sm text-muted-foreground">Years Experience</div>
                 </div>
               </div>

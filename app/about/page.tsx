@@ -23,7 +23,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <Badge variant="secondary" className="w-fit mx-auto">
-              Serving Rochester, NY Since 2014
+              Serving Rochester, NY Since 2019
             </Badge>
             <h1 className="text-4xl lg:text-5xl font-serif font-bold text-balance">
               Building Dreams, One Project at a Time

@@ -275,7 +275,7 @@ export default function ServicesPage() {
             {[
               {
                 icon: Star,
-                title: "10+ Years Experience",
+                title: "5+ Years Experience",
                 description: "Proven track record with hundreds of satisfied customers",
               },
               {
