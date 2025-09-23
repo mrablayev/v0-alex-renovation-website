@@ -39,7 +39,7 @@ export default function HomePage() {
                 </h1>
                 <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
                   From small repairs to complete home transformations, we handle every aspect of your renovation project
-                  with expertise and care. Whether you need <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovation services</Link>, <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom remodeling</Link>, or <Link href="/services/flooring" className="text-primary hover:underline">flooring installation</Link>, we're here to help transform your home.
+                  with expertise and care. Whether you need <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovation services</Link>, <Link href="/services/bathroom-remodels" className=\"text-primary hover:underline">bathroom remodeling</Link>, or <Link href="/services/flooring" className=\"text-primary hover:underline">flooring installation</Link>, we're here to help transform your home.
                 </p>
               </div>
 
@@ -100,7 +100,7 @@ export default function HomePage() {
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
               From small repairs to complete home transformations, we handle every aspect of your renovation project
-              with expertise and care. Explore our <Link href="/services" className="text-primary hover:underline">complete renovation services</Link> or <Link href="/projects" className="text-primary hover:underline">view our completed projects</Link> to see the quality of our work.
+              with expertise and care. Explore our <Link href="/services" className="text-primary hover:underline">complete renovation services</Link> or <Link href="/projects" className=\"text-primary hover:underline">view our completed projects</Link> to see the quality of our work.
             </p>
           </div>
 
