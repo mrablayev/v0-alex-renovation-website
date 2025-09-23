@@ -57,7 +57,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="/alex-martinez-founder-of-alex-renovation-in-his-workshop.jpg"
+                  src="/FD339258-FED7-4DBA-B38C-3DF33A83FA9B.jpeg"
                   alt="Professional renovation workspace"
                   className="w-full h-full object-cover"
                 />
