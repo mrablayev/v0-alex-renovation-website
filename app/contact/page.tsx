@@ -1,14 +1,10 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Breadcrumbs } from "@/components/breadcrumbs"
+import { ContactForm } from "@/components/contact-form"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox"
 import Link from "next/link"
 import { Phone, Mail, MapPin, Clock, MessageSquare, CheckCircle, Home } from "lucide-react"
 import type { Metadata } from "next"
@@ -115,152 +111,9 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <Card id="contact-form" className="border-0 bg-card/50">
-                <CardHeader>
-                  <CardTitle className="text-xl font-serif">Project Details</CardTitle>
-                  <CardDescription>
-                    Please provide as much detail as possible to help us give you an accurate estimate.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <form className="space-y-6">
-                    {/* Personal Information */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="firstName">First Name *</Label>
-                        <Input id="firstName" placeholder="John" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="lastName">Last Name *</Label>
-                        <Input id="lastName" placeholder="Smith" required />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email Address *</Label>
-                        <Input id="email" type="email" placeholder="john@example.com" required />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number *</Label>
-                        <Input id="phone" type="tel" placeholder="(585) 472-5795" required />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="address">Property Address</Label>
-                      <Input id="address" placeholder="123 Main St, Rochester, NY 14620" />
-                    </div>
-
-                    {/* Project Information */}
-                    <div className="space-y-4 pt-4 border-t">
-                      <h3 className="text-lg font-semibold">Project Information</h3>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="projectType">Project Type *</Label>
-                          <Select required>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select project type" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="kitchen">Kitchen Renovation</SelectItem>
-                              <SelectItem value="bathroom">Bathroom Remodel</SelectItem>
-                              <SelectItem value="flooring">Flooring Installation</SelectItem>
-                              <SelectItem value="painting">Interior/Exterior Painting</SelectItem>
-                              <SelectItem value="plumbing">Plumbing Services</SelectItem>
-                              <SelectItem value="electrical">Electrical Work</SelectItem>
-                              <SelectItem value="hvac">HVAC Services</SelectItem>
-                              <SelectItem value="exterior">Exterior Improvements</SelectItem>
-                              <SelectItem value="multiple">Multiple Services</SelectItem>
-                              <SelectItem value="other">Other</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-
-                        <div className="space-y-2">
-                          <Label htmlFor="budget">Estimated Budget</Label>
-                          <Select>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select budget range" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="under-10k">Under $10,000</SelectItem>
-                              <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
-                              <SelectItem value="25k-50k">$25,000 - $50,000</SelectItem>
-                              <SelectItem value="50k-100k">$50,000 - $100,000</SelectItem>
-                              <SelectItem value="over-100k">Over $100,000</SelectItem>
-                              <SelectItem value="not-sure">Not Sure</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="timeline">Preferred Timeline</Label>
-                        <Select>
-                          <SelectTrigger>
-                            <SelectValue placeholder="When would you like to start?" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="asap">As soon as possible</SelectItem>
-                            <SelectItem value="1-month">Within 1 month</SelectItem>
-                            <SelectItem value="2-3-months">2-3 months</SelectItem>
-                            <SelectItem value="3-6-months">3-6 months</SelectItem>
-                            <SelectItem value="6-months-plus">6+ months</SelectItem>
-                            <SelectItem value="just-planning">Just planning/researching</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-
-                      <div className="space-y-2">
-                        <Label htmlFor="message">Project Description *</Label>
-                        <Textarea
-                          id="message"
-                          placeholder="Please describe your project in detail. Include room dimensions, specific requirements, style preferences, and any other relevant information..."
-                          rows={5}
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    {/* Preferences */}
-                    <div className="space-y-4 pt-4 border-t">
-                      <h3 className="text-lg font-semibold">Contact Preferences</h3>
-
-                      <div className="space-y-3">
-                        <div className="flex items-center space-x-2">
-                          <Checkbox id="consultation" />
-                          <Label htmlFor="consultation" className="text-sm">
-                            I would like to schedule a free in-home consultation
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Checkbox id="newsletter" />
-                          <Label htmlFor="newsletter" className="text-sm">
-                            Send me renovation tips and project updates
-                          </Label>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Checkbox id="urgent" />
-                          <Label htmlFor="urgent" className="text-sm">
-                            This is an urgent project (emergency repair needed)
-                          </Label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <Button type="submit" size="lg" className="w-full text-lg py-6">
-                      Send My Free Estimate Request
-                    </Button>
-
-                    <p className="text-xs text-muted-foreground text-center">
-                      By submitting this form, you agree to be contacted by Alex Renovation regarding your project. We
-                      respect your privacy and will never share your information.
-                    </p>
-                  </form>
-                </CardContent>
-              </Card>
+              <div id="contact-form">
+                <ContactForm />
+              </div>
             </div>
 
             {/* Business Information */}
