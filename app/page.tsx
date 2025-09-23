@@ -258,6 +258,80 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Recent Projects Preview */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl lg:text-4xl font-serif font-bold text-balance">Recent Projects</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+              See our latest completed renovations and the transformations we've created for Rochester homeowners.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="group hover:shadow-lg transition-all border-0 bg-card/50 overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="/modern-kitchen-with-white-cabinets-quartz-countert.jpg"
+                  alt="Modern kitchen renovation"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader className="pb-4">
+                <CardTitle className="text-lg font-serif">Modern Kitchen Transformation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm leading-relaxed">
+                  Complete kitchen renovation with custom cabinetry and quartz countertops in Brighton, NY.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all border-0 bg-card/50 overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="/modern-bathroom-renovation-with-tile-shower-and-va.jpg"
+                  alt="Luxury bathroom renovation"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader className="pb-4">
+                <CardTitle className="text-lg font-serif">Luxury Master Bathroom</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm leading-relaxed">
+                  Spa-like bathroom renovation with walk-in shower and heated floors in Pittsford, NY.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-lg transition-all border-0 bg-card/50 overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src="/beautiful-hardwood-flooring-installation-in-modern.jpg"
+                  alt="Hardwood flooring installation"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader className="pb-4">
+                <CardTitle className="text-lg font-serif">Hardwood Flooring Installation</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm leading-relaxed">
+                  Beautiful oak hardwood flooring installation throughout main living areas in Webster, NY.
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" asChild>
+              <Link href="/projects">View All Projects</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
