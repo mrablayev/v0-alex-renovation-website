@@ -41,7 +41,7 @@ export default function ContactPage() {
             <h1 className="text-4xl lg:text-5xl font-serif font-bold text-balance">Ready to Transform Your Home?</h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-3xl mx-auto">
               Let's discuss your renovation project and bring your vision to life. Get a free, no-obligation estimate
-              and discover why Rochester homeowners trust Alex Renovation. Whether you need <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovation</Link>, <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom remodeling</Link>, or any of our <Link href="/services" className="text-primary hover:underline">professional renovation services</Link>, we're here to help.
+              and discover why Rochester homeowners trust Alex Renovation. Whether you need <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovation</Link>, <Link href="/services/bathroom-remodels" className=\"text-primary hover:underline">bathroom remodeling</Link>, or any of our <Link href="/services" className=\"text-primary hover:underline">professional renovation services</Link>, we're here to help.
             </p>
           </div>
         </div>

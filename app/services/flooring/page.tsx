@@ -49,7 +49,7 @@ export default function FlooringPage() {
               </h1>
               <p className="text-xl text-white/90 text-pretty leading-relaxed">
                 Transform your home with premium flooring that combines beauty, durability, and value. From hardwood to
-                luxury vinyl, we install floors that stand the test of time. We also offer <Link href="/services/kitchen-renovations" className="text-white hover:text-white/80 underline">kitchen renovation services</Link> and <Link href="/services/bathroom-remodels" className="text-white hover:text-white/80 underline">bathroom remodeling</Link> for complete home transformations.
+                luxury vinyl, we install floors that stand the test of time. We also offer <Link href="/services/kitchen-renovations" className="text-white hover:text-white/80 underline">kitchen renovation services</Link> and <Link href="/services/bathroom-remodels" className=\"text-white hover:text-white/80 underline">bathroom remodeling</Link> for complete home transformations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="text-lg px-8 py-6">

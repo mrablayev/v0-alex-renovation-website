@@ -46,7 +46,7 @@ export default function KitchenRenovationPage() {
               <h1 className="text-4xl lg:text-5xl font-serif font-bold text-balance">Create Your Dream Kitchen</h1>
               <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
                 Transform the heart of your home with custom cabinetry, premium countertops, and modern appliances. Our
-                expert team creates functional, beautiful kitchens that bring families together. We also provide <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom renovation services</Link> and <Link href="/services/flooring" className="text-primary hover:underline">professional flooring installation</Link> to complete your home transformation.
+                expert team creates functional, beautiful kitchens that bring families together. We also provide <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom renovation services</Link> and <Link href="/services/flooring" className=\"text-primary hover:underline">professional flooring installation</Link> to complete your home transformation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
@@ -372,7 +372,7 @@ export default function KitchenRenovationPage() {
             </h2>
             <p className="text-xl opacity-90 text-pretty leading-relaxed">
               Let's discuss your kitchen renovation project. We'll provide a detailed design consultation and
-              transparent pricing to bring your vision to life. We also offer <Link href="/services/bathroom-remodels" className="text-white hover:text-white/80 underline">bathroom renovation services</Link> and <Link href="/services/flooring" className="text-white hover:text-white/80 underline">flooring installation</Link> to complete your home transformation.
+              transparent pricing to bring your vision to life. We also offer <Link href="/services/bathroom-remodels" className="text-white hover:text-white/80 underline">bathroom renovation services</Link> and <Link href="/services/flooring" className=\"text-white hover:text-white/80 underline">flooring installation</Link> to complete your home transformation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild className="text-lg px-8 py-6">

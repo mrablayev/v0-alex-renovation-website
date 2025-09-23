@@ -39,7 +39,7 @@ export default function LocationsPage() {
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-3xl mx-auto">
               Professional renovation services throughout Monroe County and the greater Rochester area. Local expertise,
-              quality craftsmanship, and personalized service for every community we serve. We offer comprehensive <Link href="/services" className="text-primary hover:underline">renovation services</Link> including <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen remodeling</Link> and <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom renovations</Link> in all our service areas.
+              quality craftsmanship, and personalized service for every community we serve. We offer comprehensive <Link href="/services" className="text-primary hover:underline">renovation services</Link> including <Link href="/services/kitchen-renovations" className=\"text-primary hover:underline">kitchen remodeling</Link> and <Link href="/services/bathroom-remodels" className=\"text-primary hover:underline">bathroom renovations</Link> in all our service areas.
             </p>
           </div>
         </div>

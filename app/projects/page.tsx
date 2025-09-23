@@ -43,7 +43,7 @@ export default function ProjectsPage() {
             </h1>
             <p className="text-xl text-muted-foreground text-pretty leading-relaxed max-w-3xl mx-auto">
               Explore our portfolio of successful home renovations throughout Rochester, NY. From kitchen remodels to
-              complete home transformations, see the quality craftsmanship that sets us apart. Each project showcases our expertise in <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovations</Link>, <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom remodeling</Link>, and other <Link href="/services" className="text-primary hover:underline">professional renovation services</Link>.
+              complete home transformations, see the quality craftsmanship that sets us apart. Each project showcases our expertise in <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovations</Link>, <Link href="/services/bathroom-remodels" className=\"text-primary hover:underline">bathroom remodeling</Link>, and other <Link href="/services" className=\"text-primary hover:underline">professional renovation services</Link>.
             </p>
           </div>
         </div>

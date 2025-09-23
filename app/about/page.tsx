@@ -57,7 +57,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   We specialize in transforming homes with quality workmanship and attention to detail. Our commitment
-                  to customer satisfaction drives everything we do, from initial consultation to project completion. View our <Link href="/projects" className="text-primary hover:underline">completed renovation projects</Link> to see examples of our work throughout <Link href="/locations" className="text-primary hover:underline">Rochester and surrounding areas</Link>.
+                  to customer satisfaction drives everything we do, from initial consultation to project completion. View our <Link href="/projects" className="text-primary hover:underline">completed renovation projects</Link> to see examples of our work throughout <Link href="/locations" className=\"text-primary hover:underline">Rochester and surrounding areas</Link>.
                 </p>
               </div>
             </div>

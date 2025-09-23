@@ -48,7 +48,7 @@ export default function BathroomRemodelingPage() {
               </h1>
               <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
                 From outdated to outstanding - we create beautiful, functional bathrooms that add value to your home and
-                comfort to your daily routine. Expert craftsmanship, premium materials, and personalized design. We also provide <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovation services</Link> and <Link href="/services/tiling" className="text-primary hover:underline">professional tiling services</Link> for complete home transformations.
+                comfort to your daily routine. Expert craftsmanship, premium materials, and personalized design. We also provide <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovation services</Link> and <Link href="/services/tiling" className=\"text-primary hover:underline">professional tiling services</Link> for complete home transformations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
