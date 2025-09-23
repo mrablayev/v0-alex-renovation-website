@@ -114,7 +114,7 @@ export default function RootLayout({
               "@id": "https://alexrenovation.net/#organization",
               name: "Alex Renovation",
               alternateName: "Alex Renovation Services",
-              description: "Professional home renovation and handyman services in Rochester, NY and surrounding areas.",
+              description: "Professional home renovation and handyman services in Rochester, NY and surrounding areas since 2019.",
               url: "https://alexrenovation.net",
               telephone: "+15854725795",
               email: "info@alexrenovation.net",
