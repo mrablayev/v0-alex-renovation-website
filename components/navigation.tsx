@@ -66,15 +66,17 @@ export function Navigation() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <div className="grid w-[400px] gap-2 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {services.map((service) => (
-                      <Link
-                        key={service.name}
-                        href={service.href}
-                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                      >
-                        <div className="text-sm font-medium leading-none">{service.name}</div>
-                      </Link>
+                      <NavigationMenuLink asChild>
+                        <Link
+                          key={service.name}
+                          href={service.href}
+                          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                        >
+                          <div className="text-sm font-medium leading-none">{service.name}</div>
+                        </Link>
+                      </NavigationMenuLink>
                     ))}
                   </div>
                 </NavigationMenuContent>
