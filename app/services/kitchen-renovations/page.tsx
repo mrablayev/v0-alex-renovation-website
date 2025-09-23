@@ -1,5 +1,8 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { Breadcrumbs } from "@/components/breadcrumbs"
+import { RelatedLinks, kitchenRelatedLinks } from "@/components/related-links"
+import { ServiceNavigation } from "@/components/service-navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -17,6 +20,13 @@ export default function KitchenRenovationPage() {
   return (
     <div className="min-h-screen">
       <Navigation />
+
+      {/* Breadcrumbs */}
+      <section className="py-4 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <Breadcrumbs />
+        </div>
+      </section>
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/5 to-accent/5 py-20">
@@ -36,7 +46,7 @@ export default function KitchenRenovationPage() {
               <h1 className="text-4xl lg:text-5xl font-serif font-bold text-balance">Create Your Dream Kitchen</h1>
               <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
                 Transform the heart of your home with custom cabinetry, premium countertops, and modern appliances. Our
-                expert team creates functional, beautiful kitchens that bring families together.
+                expert team creates functional, beautiful kitchens that bring families together. We also provide <Link href="/services/bathroom-remodels" className="text-primary hover:underline">bathroom renovation services</Link> and <Link href="/services/flooring" className="text-primary hover:underline">professional flooring installation</Link> to complete your home transformation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
@@ -115,7 +125,7 @@ export default function KitchenRenovationPage() {
                 icon: Zap,
                 title: "Appliance Integration Services",
                 description:
-                  "Seamless integration of modern appliances with proper electrical connections, plumbing hookups, and ventilation systems. We ensure optimal performance and energy efficiency for all kitchen appliances.",
+                  "Seamless integration of modern appliances with proper <Link href='/services/electrical' className='text-primary hover:underline'>electrical connections</Link>, <Link href='/services/plumbing' className='text-primary hover:underline'>plumbing hookups</Link>, and ventilation systems. We ensure optimal performance and energy efficiency for all kitchen appliances.",
                 features: [
                   "Built-in Appliance Installation",
                   "Electrical System Upgrades",
@@ -151,7 +161,7 @@ export default function KitchenRenovationPage() {
                   "Waterproof Installation Techniques",
                 ],
                 benefits:
-                  "Protects walls from moisture and stains, adds visual interest, and provides easy-to-clean surfaces for busy kitchens.",
+                  "Protects walls from moisture and stains, adds visual interest, and provides easy-to-clean surfaces for busy kitchens. Learn more about our <Link href='/services/tiling' className='text-primary hover:underline'>professional tiling services</Link>.",
               },
               {
                 icon: Wrench,
@@ -337,6 +347,22 @@ export default function KitchenRenovationPage() {
         </div>
       </section>
 
+      {/* Related Services */}
+      <RelatedLinks 
+        title="Complete Your Home Renovation"
+        links={kitchenRelatedLinks}
+        className="bg-muted/30"
+      />
+
+      {/* Service Navigation */}
+      <ServiceNavigation
+        currentService="Kitchen Renovations"
+        nextService={{
+          title: "Bathroom Remodels",
+          href: "/services/bathroom-remodels"
+        }}
+      />
+
       {/* Call to Action */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
@@ -346,7 +372,7 @@ export default function KitchenRenovationPage() {
             </h2>
             <p className="text-xl opacity-90 text-pretty leading-relaxed">
               Let's discuss your kitchen renovation project. We'll provide a detailed design consultation and
-              transparent pricing to bring your vision to life.
+              transparent pricing to bring your vision to life. We also offer <Link href="/services/bathroom-remodels" className="text-white hover:text-white/80 underline">bathroom renovation services</Link> and <Link href="/services/flooring" className="text-white hover:text-white/80 underline">flooring installation</Link> to complete your home transformation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild className="text-lg px-8 py-6">

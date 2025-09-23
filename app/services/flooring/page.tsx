@@ -1,5 +1,8 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { Breadcrumbs } from "@/components/breadcrumbs"
+import { RelatedLinks, flooringRelatedLinks } from "@/components/related-links"
+import { ServiceNavigation } from "@/components/service-navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -17,6 +20,13 @@ export default function FlooringPage() {
   return (
     <div className="min-h-screen">
       <Navigation />
+
+      {/* Breadcrumbs */}
+      <section className="py-4 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <Breadcrumbs />
+        </div>
+      </section>
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/5 to-accent/5 py-20">
@@ -39,7 +49,7 @@ export default function FlooringPage() {
               </h1>
               <p className="text-xl text-white/90 text-pretty leading-relaxed">
                 Transform your home with premium flooring that combines beauty, durability, and value. From hardwood to
-                luxury vinyl, we install floors that stand the test of time.
+                luxury vinyl, we install floors that stand the test of time. We also offer <Link href="/services/kitchen-renovations" className="text-white hover:text-white/80 underline">kitchen renovation services</Link> and <Link href="/services/bathroom-remodels" className="text-white hover:text-white/80 underline">bathroom remodeling</Link> for complete home transformations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
@@ -236,6 +246,26 @@ export default function FlooringPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedLinks 
+        title="Complete Your Home Renovation"
+        links={flooringRelatedLinks}
+        className="bg-background"
+      />
+
+      {/* Service Navigation */}
+      <ServiceNavigation
+        currentService="Flooring Installation"
+        previousService={{
+          title: "Bathroom Remodels",
+          href: "/services/bathroom-remodels"
+        }}
+        nextService={{
+          title: "Handyman Services",
+          href: "/services/handyman"
+        }}
+      />
 
       {/* Call to Action */}
       <section className="py-20 bg-primary text-primary-foreground">

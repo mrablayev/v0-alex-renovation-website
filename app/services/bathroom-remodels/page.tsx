@@ -1,5 +1,8 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { Breadcrumbs } from "@/components/breadcrumbs"
+import { RelatedLinks, bathroomRelatedLinks } from "@/components/related-links"
+import { ServiceNavigation } from "@/components/service-navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -17,6 +20,13 @@ export default function BathroomRemodelingPage() {
   return (
     <div className="min-h-screen">
       <Navigation />
+
+      {/* Breadcrumbs */}
+      <section className="py-4 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <Breadcrumbs />
+        </div>
+      </section>
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary/5 to-accent/5 py-20">
@@ -38,7 +48,7 @@ export default function BathroomRemodelingPage() {
               </h1>
               <p className="text-xl text-muted-foreground text-pretty leading-relaxed">
                 From outdated to outstanding - we create beautiful, functional bathrooms that add value to your home and
-                comfort to your daily routine. Expert craftsmanship, premium materials, and personalized design.
+                comfort to your daily routine. Expert craftsmanship, premium materials, and personalized design. We also provide <Link href="/services/kitchen-renovations" className="text-primary hover:underline">kitchen renovation services</Link> and <Link href="/services/tiling" className="text-primary hover:underline">professional tiling services</Link> for complete home transformations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button size="lg" asChild className="text-lg px-8 py-6">
@@ -335,6 +345,26 @@ export default function BathroomRemodelingPage() {
           </div>
         </div>
       </section>
+
+      {/* Related Services */}
+      <RelatedLinks 
+        title="Complete Your Home Renovation"
+        links={bathroomRelatedLinks}
+        className="bg-muted/30"
+      />
+
+      {/* Service Navigation */}
+      <ServiceNavigation
+        currentService="Bathroom Remodels"
+        previousService={{
+          title: "Kitchen Renovations",
+          href: "/services/kitchen-renovations"
+        }}
+        nextService={{
+          title: "Flooring Installation",
+          href: "/services/flooring"
+        }}
+      />
 
       {/* Call to Action */}
       <section className="py-20 bg-primary text-primary-foreground">
