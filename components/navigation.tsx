@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -28,6 +28,56 @@ const services = [
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isServicesClicked, setIsServicesClicked] = useState(false)
+  const servicesTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const servicesRef = useRef<HTMLDivElement>(null)
+
+  // Handle click outside to close services menu
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setIsServicesClicked(false)
+        setIsServicesOpen(false)
+      }
+    }
+
+    if (isServicesClicked) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isServicesClicked])
+
+  const handleServicesMouseEnter = () => {
+    if (servicesTimeoutRef.current) {
+      clearTimeout(servicesTimeoutRef.current)
+    }
+    // Small delay before opening
+    servicesTimeoutRef.current = setTimeout(() => {
+      if (!isServicesClicked) {
+        setIsServicesOpen(true)
+      }
+    }, 150)
+  }
+
+  const handleServicesMouseLeave = () => {
+    if (servicesTimeoutRef.current) {
+      clearTimeout(servicesTimeoutRef.current)
+    }
+    // Delay before closing to allow cursor movement
+    servicesTimeoutRef.current = setTimeout(() => {
+      if (!isServicesClicked) {
+        setIsServicesOpen(false)
+      }
+    }, 300)
+  }
+
+  const handleServicesClick = () => {
+    setIsServicesClicked(!isServicesClicked)
+    setIsServicesOpen(!isServicesOpen)
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white shadow-sm">
@@ -55,23 +105,35 @@ export function Navigation() {
             </Link>
 
             {/* Services Dropdown */}
-            <div 
+            <div
+              ref={servicesRef}
               className="relative"
-              onMouseEnter={() => setIsServicesOpen(true)}
-              onMouseLeave={() => setIsServicesOpen(false)}
+              onMouseEnter={handleServicesMouseEnter}
+              onMouseLeave={handleServicesMouseLeave}
             >
-              <button className="flex items-center space-x-1 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors">
+              <button 
+                onClick={handleServicesClick}
+                className="flex items-center space-x-1 text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
                 <span>Services</span>
-                <ChevronDown className="h-4 w-4" />
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${(isServicesOpen || isServicesClicked) ? 'rotate-180' : ''}`} />
               </button>
               
-              {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+              {(isServicesOpen || isServicesClicked) && (
+                <div 
+                  className="absolute top-full left-0 mt-2 w-96 bg-white border border-border rounded-lg shadow-lg z-50"
+                  onMouseEnter={handleServicesMouseEnter}
+                  onMouseLeave={handleServicesMouseLeave}
+                >
                   <div className="grid grid-cols-2 gap-1 p-4">
                     {services.map((service) => (
                       <Link
                         key={service.name}
                         href={service.href}
+                        onClick={() => {
+                          setIsServicesClicked(false)
+                          setIsServicesOpen(false)
+                        }}
                         className="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors"
                       >
                         {service.name}
