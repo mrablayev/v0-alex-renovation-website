@@ -272,7 +272,6 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-muted-foreground/50;
   }
-}
 
 /* Accessibility and readability improvements */
 
