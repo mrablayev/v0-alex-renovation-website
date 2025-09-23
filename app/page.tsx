@@ -192,7 +192,7 @@ export default function HomePage() {
                   Why Rochester Homeowners Choose Alex Renovation
                 </h2>
                 <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-                  With over 10 years of experience serving the Rochester community, we've built our reputation on
+                  With over 5 years of experience serving our community, we've built our reputation on
                   quality work, honest pricing, and exceptional customer service.
                 </p>
               </div>
