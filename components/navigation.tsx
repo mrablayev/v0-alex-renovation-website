@@ -121,11 +121,11 @@ export function Navigation() {
               
               {(isServicesOpen || isServicesClicked) && (
                 <div 
-                  className="absolute top-full left-0 mt-2 w-96 bg-white border border-border rounded-lg shadow-lg z-50"
+                  className="absolute top-full left-0 mt-2 w-96 bg-white border border-gray-200 rounded-lg shadow-xl z-50 overflow-hidden"
                   onMouseEnter={handleServicesMouseEnter}
                   onMouseLeave={handleServicesMouseLeave}
                 >
-                  <div className="grid grid-cols-2 gap-1 p-4">
+                  <div className="grid grid-cols-2 gap-0 p-2">
                     {services.map((service) => (
                       <Link
                         key={service.name}
@@ -134,11 +134,23 @@ export function Navigation() {
                           setIsServicesClicked(false)
                           setIsServicesOpen(false)
                         }}
-                        className="block px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-md transition-colors"
+                        className="block px-3 py-3 text-sm font-medium text-gray-800 hover:bg-blue-600 hover:text-white rounded-md transition-all duration-200 border-b border-gray-100 last:border-b-0"
                       >
                         {service.name}
                       </Link>
                     ))}
+                  </div>
+                  <div className="bg-gray-50 px-4 py-3 border-t border-gray-200">
+                    <Link 
+                      href="/services" 
+                      className="text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                      onClick={() => {
+                        setIsServicesClicked(false)
+                        setIsServicesOpen(false)
+                      }}
+                    >
+                      View All Services →
+                    </Link>
                   </div>
                 </div>
               )}

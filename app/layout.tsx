@@ -261,7 +261,10 @@ export default function RootLayout({
         />
       </head>
       <body className={`font-sans ${sourceSans.variable} ${playfair.variable} ${GeistMono.variable} antialiased`}>
-        <Suspense fallback={null}>{children}</Suspense>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
+        <div id="main-content">
+          <Suspense fallback={null}>{children}</Suspense>
+        </div>
         <Analytics />
       </body>
     </html>
